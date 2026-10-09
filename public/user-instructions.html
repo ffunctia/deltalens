@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>User instruction</title>
+  <style>
+    :root {
+      --bg: #06111f;
+      --panel: rgba(10, 24, 42, 0.9);
+      --cyan: #49d6ff;
+      --pink: #ff7c9e;
+      --text: #edf8ff;
+      --muted: #9bb4c8;
+      --line: rgba(111, 193, 226, 0.22);
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--text);
+      background: radial-gradient(circle at 70% 0, #123a54, var(--bg) 48%, #030811 100%);
+      font-family: "Avenir Next", Avenir, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+
+    main { max-width: 940px; margin: 0 auto; padding: 64px 24px 80px; }
+    .eyebrow {
+      color: var(--cyan);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+    h1 { max-width: 700px; margin: 16px 0 14px; font-size: clamp(42px, 8vw, 76px); line-height: .96; letter-spacing: -.04em; }
+    .intro { max-width: 620px; margin: 0 0 42px; color: var(--muted); font-size: 18px; }
+    .guide {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+    section {
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: var(--panel);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, .2);
+      backdrop-filter: blur(14px);
+    }
+    section.wide { grid-column: 1 / -1; }
+    h2 { margin: 0 0 12px; color: var(--cyan); font-size: 20px; }
+    p { margin: 0 0 12px; color: var(--muted); }
+    ol, ul { margin: 0; padding-left: 22px; color: var(--muted); }
+    li + li { margin-top: 8px; }
+    strong { color: var(--text); }
+    .back { display: inline-block; margin-top: 34px; color: var(--cyan); font-weight: 800; text-decoration: none; }
+    .back:hover { text-decoration: underline; }
+    @media (max-width: 680px) {
+      main { padding: 42px 16px 56px; }
+      .guide { grid-template-columns: 1fr; }
+      section.wide { grid-column: auto; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <span class="eyebrow">User instruction</span>
+    <h1>Compare with confidence.</h1>
+    <p class="intro">Use this page as a quick reference while the comparison workspace remains open in the other tab.</p>
+
+    <div class="guide">
+      <section class="wide">
+        <h2>1. Compare two documents</h2>
+        <ol>
+          <li>Choose the <strong>Original document</strong>.</li>
+          <li>Choose the <strong>Updated document</strong>.</li>
+          <li>Select <strong>Compare</strong> and wait for the page previews to render.</li>
+          <li>Review the red and blue highlights. They mark the areas that differ between the two files.</li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>Supported files</h2>
+        <p>PDF comparison runs directly in the browser. You can also prepare DOCX, XLSX, PPTX, ODT, ODS, ODP, CSV, and TXT files when the required conversion support is available.</p>
+      </section>
+
+      <section>
+        <h2>Read the summary</h2>
+        <p><strong>Pages</strong> shows how many pages were compared.</p>
+        <p><strong>Change score</strong> estimates the visual area that changed from 0 to 100. A small score can represent a small text edit.</p>
+        <p><strong>Status</strong> describes the size of the detected revision.</p>
+      </section>
+
+      <section>
+        <h2>AI explanation</h2>
+        <p>AI explanation is optional. Select a provider and enter its API key.</p>
+        <ul>
+          <li><strong>Save key</strong> stores the key in this browser so you can use it again later.</li>
+          <li><strong>Remove key</strong> deletes the saved key from this browser.</li>
+          <li>Enable the consent checkbox before sending any metadata.</li>
+          <li>Choose <strong>Explain changes</strong> to request a summary.</li>
+        </ul>
+        <p>The explanation receives comparison metadata and excerpts, not the original PDF files.</p>
+      </section>
+
+      <section>
+        <h2>Privacy and storage</h2>
+        <p>PDF comparison happens locally in your browser. API keys are stored only in this browser's local storage. Use <strong>Remove key</strong> when you no longer want a key saved here.</p>
+      </section>
+
+      <section class="wide">
+        <h2>For clearer results</h2>
+        <ul>
+          <li>Use the same page size and orientation in both documents when possible.</li>
+          <li>Keep scans at a similar resolution to reduce layout-only noise.</li>
+          <li>Use the highlights as visual evidence and verify important legal, financial, or compliance changes against the source files.</li>
+        </ul>
+      </section>
+    </div>
+
+    <a class="back" href="/doculens">← Return to comparison</a>
+  </main>
+</body>
+</html>

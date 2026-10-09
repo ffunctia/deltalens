@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="pdfDiffApp">
+<head>
+  <meta charset="utf-8">
+  <title>PDF Diff Viewer</title>
+
+  <!-- AngularJS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
+
+  <!-- PDF.js browser build -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+
+  <!-- Your Angular app -->
+  <script src="app.js"></script>
+</head>
+
+
+<body ng-controller="MainCtrl">
+
+  <h2>PDF Diff Viewer</h2>
+
+  <input type="file" id="fileA" accept="application/pdf">
+  <input type="file" id="fileB" accept="application/pdf">
+
+  <button ng-click="compare()">Compare PDFs</button>
+
+  <!-- <h3>Diff Results</h3> -->
+  <div id="results"></div>
+
+  <canvas id="canvasA" style="display:none"></canvas>
+  <canvas id="canvasB" style="display:none"></canvas>
+  <canvas id="canvasDiff" style="display:none"></canvas>
+
+</body>
+</html>
